@@ -24,11 +24,17 @@ export type Edge = {
 export type Mutation = {
   __typename?: 'Mutation';
   productCreate: ProductCreateOutput;
+  productLike: ProductLikeOutput;
 };
 
 
 export type MutationProductCreateArgs = {
   input: ProductCreateInput;
+};
+
+
+export type MutationProductLikeArgs = {
+  input: ProductLikeInput;
 };
 
 export type Node = {
@@ -77,6 +83,7 @@ export type Product = Node & {
   createdAt: Scalars['DateTime'];
   description?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
+  likes: Scalars['Int'];
   name: Scalars['String'];
   owner: User;
   pictures: Array<Picture>;
@@ -102,6 +109,15 @@ export type ProductEdge = Edge & {
   __typename?: 'ProductEdge';
   cursor: Scalars['ID'];
   node: Product;
+};
+
+export type ProductLikeInput = {
+  id: Scalars['String'];
+};
+
+export type ProductLikeOutput = {
+  __typename?: 'ProductLikeOutput';
+  product: Product;
 };
 
 export type ProductsPagination = Pagination & {

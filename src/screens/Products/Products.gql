@@ -1,0 +1,9 @@
+query productsList($take: Int, $skip: Int) {
+  productsPagination(take: $take, skip: $skip) {
+    totalCount
+    nodes {
+      id
+      ...product
+    }
+  }
+}

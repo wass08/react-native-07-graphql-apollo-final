@@ -3,7 +3,7 @@ import { ApolloProvider } from "@apollo/client";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import { client } from "~/graphql/client";
-import { Products } from "~/screens/Product";
+import { Products } from "~/screens/Products";
 
 export default function App() {
   return (
